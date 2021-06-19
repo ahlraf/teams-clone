@@ -1,9 +1,12 @@
 {% extends '_base.html' %}
+{% load static %} 
 
 {% block title %}Home{% endblock title %}
 
 {% block content %}
   <h1>Microsoft Teams Homepage</h1>
+  <img class="logo" src="{% static 'images/teams_logo.png' %}">
+  <br><br>
   {% if user.is_authenticated %}
     Hi {{ user.email }}!
     <p><a href="{% url 'logout' %}">Log Out</a></p>
